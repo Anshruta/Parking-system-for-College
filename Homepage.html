@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Welcome</title>
+		<style>
+			body{
+				background-image: url('background1.jpg');
+				background-size: cover;
+			}
+			ul{
+				list-style-type:none;
+			}
+			th{
+				font-size: 20px;
+			}
+			a:link, a:visited{
+				text-decoration:none;
+				color:white;
+			}
+			a:hover{
+				background-color:white;
+				color:rgb(54, 135, 207);
+			}
+			th{
+				padding: 5px 100px;
+			}
+			fieldset { 
+               margin-left: 30%;
+               margin-right: 30%;
+			   padding-left:7%;
+               border: 3px gray groove;
+               }
+		</style>
+		<script>
+	  function Verify()
+	  {
+	    if(document.form2.email.value=="")
+			{
+				window.alert("Email required");
+				document.form2.email.focus();
+				return false
+			}
+		if(document.form2.email.value.indexOf('.',0)<0 && document.form2.email.value.indexOf('@',0)<0)
+			{
+				window.alert("Enter valid email");
+				document.form2.email.focus();
+				return false
+			}
+		if(document.form2.pwd.value=="")
+			{
+				window.alert("Password required");
+				document.form2.pwd.focus();
+				return false
+			}
+		if(document.form2.pwd.value.length<6 && document.form2.pwd.value.length>0)
+		{
+		  window.alert("Password should be greater than 6 characters");
+		  document.form2.pwd.focus();
+		  return false
+		}
+	  }
+	</script>
+	</head>
+	
+	<body>
+		<div class='fixedElement'>
+			<table>
+			<tr>
+			<td><a href='Homepage.html'><img src="logo.png" width="100px" height="100px"/></a></td>
+			<td width="70%"></td>
+			<td><font face='Bookman Old Style' size='5'><b>Car parking</b></font></td>
+			</tr>
+			</table>
+			<br>
+			<hr size="5" noshade color="maroon">
+		<h2><center><u>Login</u></center></h2><br>
+    <form action="login.php" method="post" name="form2">
+	<fieldset>
+	<br>
+	E-mail:<br><input type="email" name="email"><br><br>
+	Password:<br><input type="password" name="pwd"><br><br>
+	<input type="submit" value="Login" onclick="return(Verify())"><br><br>
+	
+	</fieldset>
+	</body>
+</html>
